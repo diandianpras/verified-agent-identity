@@ -1,1 +1,15 @@
-npx clawhub@latest install verified-agent-identity
+name: Install Skill
+on:
+  workflow_dispatch:
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - name: Run Install Skill
+        run: npx clawhub@latest install verified-agent-identity
